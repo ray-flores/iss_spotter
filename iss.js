@@ -84,9 +84,9 @@ const nextISSTimesForMyLocation = function(callback) {
               return;
             } else {
               callback(null, passTimes);
-              for (let time of passTimes) {
-              console.log(time.risetime, time.duration);
-              }
+              // for (let time of passTimes) {
+              // // console.log(time.risetime, time.duration);
+              // }
             }
           })
         }

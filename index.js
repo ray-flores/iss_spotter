@@ -32,6 +32,7 @@
 //   }
 // });
 
+//UNCOMMENT TO RESUME FUNCTIONS!
 const { nextISSTimesForMyLocation } = require('./iss');
 
 nextISSTimesForMyLocation((error, passTimes) => {
@@ -39,14 +40,16 @@ nextISSTimesForMyLocation((error, passTimes) => {
     return console.log('It didn\'t work!', error);
   } 
   console.log('Yay!');
-  //printPassTimes(passTimes);
+  printPassTimes(passTimes);
 });
 
-// const printPassTimes = function(passTimes) {
-//   for (const pass of passTimes) {
-//     const datetime = new Date(0);
-//     datetime.setUTCSeconds(pass.risetime);
-//     const duration = pass.duration;
-//     console.log(`Next Pass at ${datetime} for ${duration} seconds!`);
-//   }
-// };
+const printPassTimes = function(passTimes) {
+  for (const pass of passTimes) {
+    const datetime = new Date(0);
+    datetime.setUTCSeconds(pass.risetime);
+    const duration = pass.duration;
+    console.log(`Next Pass at ${datetime} for ${duration} seconds!`);
+  }
+};
+
+// module.exports = { printPassTimes };
